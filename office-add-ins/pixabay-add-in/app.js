@@ -6,11 +6,6 @@
 // "use strict";
 
 (function () {
-  //Fabric-ui scripts
-  var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown');
-  for (var i = 0; i < DropdownHTMLElements.length; ++i) {
-    var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
-  }
 
   // Function for infinite scroll to load images progressively
   function infiniteScroll () {
@@ -41,7 +36,7 @@
       }
     };
     this.initialize();
-  };
+  }
 
   // Variables used for http query management.
   var newSearch = false;
@@ -54,11 +49,11 @@
       var searchBar = $('#search-bar');
       var searchForm = $('#search-form');
       searchBar.on("input", function(){
-        getSearchResults($(this).val())
+        getSearchResults($(this).val());
       });
       searchForm.on('submit', function(event){
         event.preventDefault();
-        getSearchResults($(searchBar).val())
+        getSearchResults($(searchBar).val());
       });
       // Initilize Images
       showImages(basicQuerry);
@@ -81,8 +76,8 @@
   
       debounceTimer = setTimeout(function(){
         showImages(querryString);
-      }, 1000)
-    };
+      }, 1000);
+    }
 // Get Images from the API
   function showImages (url) {
     // var adress =  + url;
@@ -92,7 +87,7 @@
       crossDomain: true,
       success: function (result){
         var hits = result.hits;
-        var imagesList = $('#images-list')
+        var imagesList = $('#images-list');
         if(newSearch) {
           imagesList = $('<ul id="images-list"></ul>');
           $('#images-list').remove();
@@ -101,13 +96,13 @@
         }
         searchPage++;
         for( var i=0; i <= hits.length; i++) {
-          var item = hits[i]
+          var item = hits[i];
           if(item){
             var listItem = $('<li class="ms-ListItem image-thumbnail"><img class="mini-image" src=' + item.webformatURL + ' alt=' + item.id + ' crossOrigin="Anonymous"/></li>');
             listItem.click(function(event) {
               insertImage(event.currentTarget.firstChild.src);
             });
-            imagesList.append(listItem)            
+            imagesList.append(listItem);       
           }
         }
         var imageContainer = $('#images');
@@ -151,7 +146,7 @@
           if (data !== 'data:,'){
             resolve(data);
           } else {
-            console.log("Need handle This!")
+            console.log("Need handle This!");
           }
         }
         image.src = url;
