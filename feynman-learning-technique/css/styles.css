@@ -165,27 +165,6 @@ a:focus {
   text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5);
 }
 
-body {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#fcfff4+0,dfe5d7+23,b3bead+100 */
-  background: #fcfff4; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #fcfff4 0%, #dfe5d7 23%, #b3bead 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(
-    center,
-    ellipse cover,
-    #fcfff4 0%,
-    #dfe5d7 23%,
-    #b3bead 100%
-  ); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(
-    ellipse at center,
-    #fcfff4 0%,
-    #dfe5d7 23%,
-    #b3bead 100%
-  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  background-image: url("../images/old_paper.jpg");
-  background-size: cover;
-}
 .fallback-message {
   font-family: sans-serif;
   line-height: 1.3;
@@ -234,14 +213,7 @@ body {
 .step.active {
     opacity: 1;
 }
-/*
-FONTS
 
-font-family: 'Open Sans', sans-serif;
-font-family: 'Marck Script', cursive;
-font-family: 'Caveat', cursive;
-font-family: 'Open Sans Condensed', sans-serif;
-*/
 .question {
   font-family: "Caveat", cursive;
   font-weight: 700;
@@ -276,7 +248,21 @@ font-family: 'Open Sans Condensed', sans-serif;
   width: 100%;
   height: auto;
 }
-
+.book {
+    justify-content: flex-start;
+    padding-left: 3rem;
+    opacity: 0;
+}
+.book.active {
+    opacity: 1;
+}
+.book-title {
+    font-size: 2rem;
+}
+.book-author {
+    font-size: 1.5rem;
+    font-family: "Caveat", cursive;
+}
 .feynman-quotas {
   flex-direction: column;
   font-family: "Caveat", cursive;
@@ -317,20 +303,21 @@ font-family: 'Open Sans Condensed', sans-serif;
 
 .outro {
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     height: 800px;
 }
 .outro-header {
-    /* margin-bottom: 128px; */
+    align-self: center;
     font-family: 'Caveat', cursive;
     font-weight: 700;
     font-size: 128px;
+    margin-bottom: 128px;
 }
 .outro-links {
     text-shadow: 0 0 0 ;
-    margin: 20px;
-    font-size: 32px;
+    margin: 8px;
+    font-size: 1.2rem;
 }
 .outro-source {
     align-self: flex-end;
@@ -347,7 +334,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 }
 .outro-links-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
 }
